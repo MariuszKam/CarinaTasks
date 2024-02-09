@@ -1,0 +1,5 @@
+{
+  <#if userId??> "userId": "${userId}",</#if>
+  "id": "type:Integer",
+  "title": "type:String"
+}

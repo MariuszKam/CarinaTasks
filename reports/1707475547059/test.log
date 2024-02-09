@@ -1,0 +1,47 @@
+[2024-02-09 10:45:47] [1] [INFO] [TestNG] Running:
+  C:\Users\rexxa\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+[2024-02-09 10:45:48] [1] [INFO] Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/albums/3
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+Cookies:		<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Fri, 09 Feb 2024 10:45:48 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1707474950&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=d%2FABrg0uf%2Fdi%2BXftBz8gHOMKg5s1xBa%2BpvvVm7Gd9qY%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1707474950&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=d%2FABrg0uf%2Fdi%2BXftBz8gHOMKg5s1xBa%2BpvvVm7Gd9qY%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+X-Powered-By: Express
+X-Ratelimit-Limit: 1000
+X-Ratelimit-Remaining: 999
+X-Ratelimit-Reset: 1707474994
+Vary: Origin, Accept-Encoding
+Access-Control-Allow-Credentials: true
+Cache-Control: max-age=43200
+Pragma: no-cache
+Expires: -1
+X-Content-Type-Options: nosniff
+Etag: W/"3d-4pCpSNQxwRgK8+geULLu1xHhLvw"
+Via: 1.1 vegur
+CF-Cache-Status: HIT
+Age: 598
+Server: cloudflare
+CF-RAY: 852b86624864bff5-WAW
+Content-Encoding: gzip
+alt-svc: h3=":443"; ma=86400
+
+{
+    "userId": 1,
+    "id": 3,
+    "title": "omnis laborum odio"
+}
+

@@ -1,0 +1,304 @@
+[2024-02-09 09:07:28] [1] [INFO] [TestNG] Running:
+  C:\Users\rexxa\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+[2024-02-09 09:07:29] [1] [INFO] Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+Cookies:		<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Fri, 09 Feb 2024 09:07:29 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1707438645&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=Ly0db%2FtzX9FrNMw6Vb6lD7nHUTO1Gy8SlRcXdtyzMKM%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1707438645&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=Ly0db%2FtzX9FrNMw6Vb6lD7nHUTO1Gy8SlRcXdtyzMKM%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+X-Powered-By: Express
+X-Ratelimit-Limit: 1000
+X-Ratelimit-Remaining: 999
+X-Ratelimit-Reset: 1707438694
+Vary: Origin, Accept-Encoding
+Access-Control-Allow-Credentials: true
+Cache-Control: public, max-age=43200
+Last-Modified: Thu, 08 Feb 2024 20:03:26 GMT
+Via: 1.1 vegur
+CF-Cache-Status: HIT
+Age: 1880
+Server: cloudflare
+CF-RAY: 852af65ba8b3fbca-WAW
+Content-Encoding: gzip
+alt-svc: h3=":443"; ma=86400
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-tomorrow.min.css"/>
+    <title>JSONPlaceholder - Free Fake REST API</title>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-E3C3GCQVBN"/>
+    <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', 'G-E3C3GCQVBN')
+  </script>
+    <script async="async" src="https://media.ethicalads.io/media/client/ethicalads.min.js"/>
+  </head>
+  <body class="px-2">
+    <header class="         container         mx-auto         max-w-4xl         flex flex-col         md:flex-row         justify-between         py-one         mb-three       ">
+      <h1>
+        <a shape="rect" class="font-bold no-underline" href="/">JSONPlaceholder</a>
+      </h1>
+      <nav>
+        <ul class="flex">
+          <li>
+            <a shape="rect" class="mr-4 no-underline" href="/guide">Guide</a>
+          </li>
+          <li>
+            <a shape="rect" class="mr-4 no-underline" href="https://github.com/sponsors/typicode">Sponsor this project</a>
+          </li>
+          <li>
+            <a shape="rect" class="mr-4 no-underline" href="https://blog.typicode.com">Blog</a>
+          </li>
+          <li>
+            <a shape="rect" class="no-underline" href="https://my-json-server.typicode.com">My JSON Server</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div>
+      <section id="hero" class="-mt-three py-36 mb-six -mx-2">
+        <div class="container mx-auto max-w-4xl">
+          <span class="text-6xl bold">{JSON} Placeholder</span>
+          <h1 class="mt-two text-lg">Free fake API for testing and prototyping.</h1>
+          <p class="mb-one text-lg">
+
+Powered by
+            <a shape="rect" href="https://github.com/typicode/json-server">JSON Server</a>
+
++
+            <a shape="rect" href="https://github.com/typicode/lowdb">LowDB</a>
+. Tested with
+            <a shape="rect" href="https://github.com/typicode/xv">XV</a>
+.
+          </p>
+          <p>
+            <b>Serving ~2 billion requests each month</b>
+.          </p>
+        </div>
+      </section>
+      <section class="container mx-auto max-w-4xl mb-six">
+        <h2 class="text-2xl mb-one">Sponsors</h2>
+        <p class="mb-two">
+
+JSONPlaceholder is supported by the following companies and
+          <a shape="rect" href="https://github.com/sponsors/typicode">Sponsors</a>
+ on GitHub, check
+them out 💖
+        </p>
+        <p>
+          <a shape="rect" href="https://mockend.com" target="_blank">
+            <img class="h-three mb-two" src="mockend.svg"/>
+          </a>
+        </p>
+        <p class="my-two">
+          <a shape="rect" href="https://github.com/sponsors/typicode">Your company logo here</a>
+        </p>
+      </section>
+      <section class="container mx-auto max-w-4xl mb-four">
+        <h2 class="text-2xl mb-one">Try it</h2>
+        <p>Run this code here, in a console or from any site:</p>
+        <pre>
+          <code class="language-javascript" id="example">fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response =&gt; response.json())
+      .then(json =&gt; console.log(json))</code>
+        </pre>
+        <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-quarter my-quarter px-4 rounded" id="run-button">
+Run script
+</button>
+        <pre>
+          <code class="language-javascript" id="result">{}</code>
+        </pre>
+        <p class="invisible" id="run-message">
+Congrats you've made your first call to JSONPlaceholder! 😃 🎉
+</p>
+        <div class="horizontal flat adaptive" data-ea-publisher="jsonplaceholdertypicodecom" data-ea-style="stickybox" data-ea-keywords="javascript|typescript|mobile|react|vue|frontend|front-end|backend|back-end"/>
+      </section>
+      <main class="container mx-auto max-w-4xl">
+        <h2>When to use</h2>
+        <p>
+JSONPlaceholder is a free online REST API that you can use           <strong>whenever you need some fake data</strong>
+. It can be in a README on GitHub, for a demo on CodeSandbox, in code examples on Stack Overflow, ...or simply to test things locally.        </p>
+        <h2>Resources</h2>
+        <p>JSONPlaceholder comes with a set of 6 common resources:</p>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="1" rowspan="1"/>
+              <th colspan="1" rowspan="1"/>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1" rowspan="1">
+                <a shape="rect" href="/posts">/posts</a>
+              </td>
+              <td colspan="1" rowspan="1">100 posts</td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">
+                <a shape="rect" href="/comments">/comments</a>
+              </td>
+              <td colspan="1" rowspan="1">500 comments</td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">
+                <a shape="rect" href="/albums">/albums</a>
+              </td>
+              <td colspan="1" rowspan="1">100 albums</td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">
+                <a shape="rect" href="/photos">/photos</a>
+              </td>
+              <td colspan="1" rowspan="1">5000 photos</td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">
+                <a shape="rect" href="/todos">/todos</a>
+              </td>
+              <td colspan="1" rowspan="1">200 todos</td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">
+                <a shape="rect" href="/users">/users</a>
+              </td>
+              <td colspan="1" rowspan="1">10 users</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <strong>Note</strong>
+: resources have relations. For example: posts have many comments, albums have many photos, ... see           <a shape="rect" href="/guide">guide</a>
+ for the full list.        </p>
+        <h2>Routes</h2>
+        <p>All HTTP methods are supported. You can use http or https for your requests.</p>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="1" rowspan="1"/>
+              <th colspan="1" rowspan="1"/>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1" rowspan="1">GET</td>
+              <td colspan="1" rowspan="1">
+                <a shape="rect" href="/posts">/posts</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">GET</td>
+              <td colspan="1" rowspan="1">
+                <a shape="rect" href="/posts/1">/posts/1</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">GET</td>
+              <td colspan="1" rowspan="1">
+                <a shape="rect" href="/posts/1/comments">/posts/1/comments</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">GET</td>
+              <td colspan="1" rowspan="1">
+                <a shape="rect" href="/comments?postId=1">/comments?postId=1</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">POST</td>
+              <td colspan="1" rowspan="1">/posts</td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">PUT</td>
+              <td colspan="1" rowspan="1">/posts/1</td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">PATCH</td>
+              <td colspan="1" rowspan="1">/posts/1</td>
+            </tr>
+            <tr>
+              <td colspan="1" rowspan="1">DELETE</td>
+              <td colspan="1" rowspan="1">/posts/1</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <strong>Note</strong>
+: see           <a shape="rect" href="/guide">guide</a>
+ for usage examples.        </p>
+        <h2>Use your own data</h2>
+        <p>
+With our sponsor           <a shape="rect" href="https://mockend.com">Mockend</a>
+ and a simple GitHub repo, you can have your own fake online REST server in seconds.        </p>
+      </main>
+      <script>
+  // Use http or https based on location.protocol
+  var example = document.getElementById('example')
+  example.textContent = example.textContent.replace('http:', location.protocol)
+
+  // Highlight result element
+  var result = document.getElementById('result')
+
+  // Run example
+  var runButton = document.getElementById('run-button')
+  runButton.onclick = function () {
+    var root = location.protocol + '//jsonplaceholder.typicode.com'
+    var runMessage = document.getElementById('run-message')
+
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then((response) =&gt; response.json())
+      .then((json) =&gt; {
+        var str = JSON.stringify(json, null, '  ')
+
+        // Format result
+        result.innerHTML = Prism.highlight(
+          str,
+          Prism.languages.javascript,
+          'javascript',
+        )
+
+        runMessage.className = ''
+      })
+  }
+</script>
+    </div>
+    <footer class="container mx-auto max-w-4xl mt-four">
+      <div class="mb-one">
+        <a shape="rect" href="https://github.com/users/typicode/sponsorship">
+          <strong>You can sponsor this project (and others) on GitHub</strong>
+        </a>
+      </div>
+      <div class="mb-one">
+
+Coded and maintained with ❤️ by
+        <a shape="rect" href="https://github.com/typicode">typicode</a>
+ © 2022
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js"/>
+    <script defer="defer" src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon="{&quot;rayId&quot;:&quot;852af65ba8b3fbca&quot;,&quot;version&quot;:&quot;2024.2.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;2f059cbf58a24e59854ee0884c97b166&quot;,&quot;b&quot;:1}" crossorigin="anonymous"/>
+  </body>
+</html>
+

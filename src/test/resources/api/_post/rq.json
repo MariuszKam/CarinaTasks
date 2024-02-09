@@ -1,0 +1,5 @@
+{
+  <#if userId?exists>"userId": "${userId}",</#if>
+  "id": null,
+  "title": "${title}"
+}

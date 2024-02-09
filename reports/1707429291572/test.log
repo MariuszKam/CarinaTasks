@@ -1,0 +1,15 @@
+[2024-02-08 09:54:51] [1] [INFO] [TestNG] Running:
+  C:\Users\rexxa\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+[2024-02-08 09:54:52] [1] [INFO] Request method:	GET
+Request URI:	http://localhost:8080/
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+Cookies:		<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Body:			<none>
+
