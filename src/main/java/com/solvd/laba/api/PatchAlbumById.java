@@ -11,7 +11,7 @@ import com.zebrunner.carina.api.http.HttpResponseStatusType;
 
 @Endpoint(url = "${config.api_url}/albums/${id}", methodType = HttpMethodType.PATCH)
 @RequestTemplatePath(path = "api/_patch/rq.json")
-@ResponseTemplatePath(path = "api/_patch/rs.schema")
+@ResponseTemplatePath(path = "api/_patch/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class PatchAlbumById extends AbstractApiMethodV2 {
     public PatchAlbumById(String id) {

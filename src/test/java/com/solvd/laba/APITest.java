@@ -24,7 +24,7 @@ public class APITest {
         //Let's say to get Album id 2, but can be specified in constructor
         GetAlbumById getAlbumById = new GetAlbumById("2");
         getAlbumById.callAPIExpectSuccess();
-        getAlbumById.validateResponseAgainstSchema("api/_getById/rs.schema");
+        getAlbumById.validateResponse();
     }
 
     @Test
@@ -59,10 +59,11 @@ public class APITest {
         String albumString = postAlbum.callAPIExpectSuccess().asString();
         ObjectMapper objectMapper = new ObjectMapper();
         Album album = objectMapper.readValue(albumString, Album.class);
+        album.setTitle("IAMNOTTHESAMEANYMORE");
         PatchAlbumById patchAlbumById = new PatchAlbumById(String.valueOf(album.getId()));
         patchAlbumById.addProperty("album", album);
         patchAlbumById.callAPIExpectSuccess();
-        patchAlbumById.validateResponseAgainstSchema("api/_patch/rs.schema");
+        patchAlbumById.validateResponse();
     }
 
 }
