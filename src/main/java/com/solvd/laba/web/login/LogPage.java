@@ -1,6 +1,6 @@
-package com.solvd.laba.web;
+package com.solvd.laba.web.login;
 
-import com.solvd.laba.web.components.LogBody;
+import com.solvd.laba.web.login.components.LogBody;
 import com.zebrunner.carina.utils.config.Configuration;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import lombok.Getter;
@@ -21,4 +21,5 @@ public class LogPage extends AbstractPage {
     public void open() {
         openURL(Configuration.getRequired("home_url"));
     }
+
 }

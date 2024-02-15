@@ -1,4 +1,4 @@
-package com.solvd.laba.web.components;
+package com.solvd.laba.web.login.components;
 
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 @Getter
 public class LogBody extends AbstractUIObject {
-    @FindBy(xpath = ".//*[@id = 'login_button_container']")
+    @FindBy(id = "login_button_container")
     private LogPanel logPanel;
 
     public LogBody(WebDriver driver, SearchContext searchContext) {

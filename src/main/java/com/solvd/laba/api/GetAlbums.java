@@ -8,7 +8,6 @@ import com.zebrunner.carina.api.http.HttpMethodType;
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 
 @Endpoint(url = "${config.api_url}/albums", methodType = HttpMethodType.GET)
-@ResponseTemplatePath(path = "api/_get/rs.schema")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class GetAlbums extends AbstractApiMethodV2 {
     public GetAlbums() {
