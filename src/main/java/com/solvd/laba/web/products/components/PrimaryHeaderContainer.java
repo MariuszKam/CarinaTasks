@@ -4,10 +4,12 @@ import com.solvd.laba.web.cart.CartPage;
 import com.solvd.laba.web.login.LogPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
+import io.appium.java_client.functions.ExpectedCondition;
 import lombok.Getter;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 @Getter
 public class PrimaryHeaderContainer extends AbstractUIObject {
@@ -28,7 +30,15 @@ public class PrimaryHeaderContainer extends AbstractUIObject {
 
     public LogPage clickLogOut() {
         menuButton.click();
+        if (!logoutButton.isVisible()) {
+            try {
+                wait(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
         logoutButton.click();
         return new LogPage(getDriver());
     }
+
 }
