@@ -7,7 +7,7 @@ import com.solvd.laba.api.GetAlbumById;
 import com.solvd.laba.api.GetAlbums;
 import com.solvd.laba.api.PatchAlbumById;
 import com.solvd.laba.api.PostAlbum;
-import com.solvd.laba.domain.Album;
+import com.solvd.laba.api.domain.Album;
 import org.testng.annotations.Test;
 
 public class APITest {

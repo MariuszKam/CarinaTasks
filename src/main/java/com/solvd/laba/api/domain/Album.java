@@ -1,4 +1,4 @@
-package com.solvd.laba.domain;
+package com.solvd.laba.api.domain;
 
 
 import lombok.AllArgsConstructor;

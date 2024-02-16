@@ -30,13 +30,7 @@ public class PrimaryHeaderContainer extends AbstractUIObject {
 
     public LogPage clickLogOut() {
         menuButton.click();
-        if (!logoutButton.isVisible()) {
-            try {
-                wait(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        waitUntil(ExpectedConditions.visibilityOf(logoutButton), 2);
         logoutButton.click();
         return new LogPage(getDriver());
     }
