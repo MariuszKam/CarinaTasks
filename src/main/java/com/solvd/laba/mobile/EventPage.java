@@ -2,6 +2,7 @@ package com.solvd.laba.mobile;
 
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
+import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +21,9 @@ public class EventPage extends AbstractPage {
 
     public EventPage(WebDriver driver) {
         super(driver);
+        setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
+        setUiLoadedMarker(saveButton);
+
     }
 
     public void clickSave() {

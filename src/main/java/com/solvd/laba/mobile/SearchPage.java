@@ -1,6 +1,7 @@
 package com.solvd.laba.mobile;
 
 import com.zebrunner.carina.utils.R;
+import com.zebrunner.carina.utils.android.IAndroidUtils;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
@@ -17,6 +18,7 @@ public class SearchPage extends AbstractPage {
     private ExtendedWebElement searchInput;
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Calendar\"]")
     private ExtendedWebElement calendar;
+
     public SearchPage(WebDriver driver) {
         super(driver);
     }
