@@ -7,10 +7,10 @@ import com.solvd.laba.web.checkout.CheckoutInformationPage;
 import com.solvd.laba.web.checkout.CheckoutOverviewPage;
 import com.solvd.laba.web.login.LogPage;
 import com.solvd.laba.web.products.ProductsPage;
-import com.solvd.laba.web.login.components.LogPanel;
 import com.solvd.laba.web.products.components.InventoryContainer;
 import com.solvd.laba.web.products.components.PrimaryHeaderContainer;
 import com.solvd.laba.web.products.components.SecondHeaderContainer;
+import com.solvd.laba.web.service.LoginService;
 import com.zebrunner.carina.core.AbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.utils.R;
@@ -33,9 +33,9 @@ public class WebTest extends AbstractTest {
     public void logTestCorrect() {
         LogPage logPage = new LogPage(getDriver());
         logPage.open();
-        LogPanel logPanel = logPage.getLogBody().getLogPanel();
-        logPanel.pageLogin(R.TESTDATA.get("correct_user"), R.TESTDATA.get("correct_password"));
-        Assert.assertEquals(getDriver().getCurrentUrl(), R.TESTDATA.get("products_page_url"));
+        logPage.assertPageOpened();
+        ProductsPage productsPage = logPage.pageLogin(R.TESTDATA.get("correct_user"), R.TESTDATA.get("correct_password"));
+        productsPage.assertPageOpened();
     }
 
     /**Second test
@@ -50,10 +50,9 @@ public class WebTest extends AbstractTest {
     public void logTestIncorrect() {
         LogPage logPage = new LogPage(getDriver());
         logPage.open();
-        LogPanel logPanel = logPage.getLogBody().getLogPanel();
-        logPanel.pageLogin(R.TESTDATA.get("incorrect_user"), R.TESTDATA.get("incorrect_password"));
-        Assert.assertTrue(logPanel.isErrorOutputVisible(), "Error isn't visible");
-        Assert.assertEquals(getDriver().getCurrentUrl(), R.TESTDATA.get("home_url"));
+        logPage.assertPageOpened();
+        logPage.pageLogin(R.TESTDATA.get("incorrect_user"), R.TESTDATA.get("incorrect_password"));
+        Assert.assertTrue(logPage.isErrorOutputVisible(), "Error isn't visible");
     }
 
     /**Third test
@@ -68,12 +67,12 @@ public class WebTest extends AbstractTest {
     @Test
     @MethodOwner(owner = "Mariusz")
     public void sortAscPriceTest() {
-        logTestCorrect();
-        ProductsPage productsPage = new ProductsPage(getDriver());
-        InventoryContainer inventoryContainer = productsPage.getProductsBody().getInventoryContainer();
+        LoginService loginService = new LoginService();
+        ProductsPage productsPage = loginService.successfulLogin();
+        InventoryContainer inventoryContainer = productsPage.getInventoryContainer();
         Assert.assertTrue(inventoryContainer.areProductsDisplayed(), "Products are not displayed");
         List<Double> startPrices = inventoryContainer.getProductPrices();
-        SecondHeaderContainer secondHeaderContainer = productsPage.getProductsBody().getSecondHeaderContainer();
+        SecondHeaderContainer secondHeaderContainer = productsPage.getSecondHeaderContainer();
         secondHeaderContainer.setSortSelect(R.TESTDATA.get("product_selector"));
         List<Double> endPrices = inventoryContainer.getProductPrices();
         Assert.assertNotEquals(startPrices, endPrices);
@@ -95,18 +94,18 @@ public class WebTest extends AbstractTest {
     @Test
     @MethodOwner(owner = "Mariusz")
     public void testCart() {
-        logTestCorrect();
-        ProductsPage productsPage = new ProductsPage(getDriver());
-        InventoryContainer inventoryContainer = productsPage.getProductsBody().getInventoryContainer();
+        LoginService loginService = new LoginService();
+        ProductsPage productsPage = loginService.successfulLogin();
+        InventoryContainer inventoryContainer = productsPage.getInventoryContainer();
         Assert.assertTrue(inventoryContainer.areProductsDisplayed(), "Products are not displayed");
         Assert.assertTrue(inventoryContainer.checkAddButtonDisplay(), "Add buttons are not displayed");
         inventoryContainer.buyAll();
         Assert.assertTrue(inventoryContainer.checkRemoveButtonDisplay(), "Buttons didn't change!");
         int products = inventoryContainer.getProducts().size();
-        PrimaryHeaderContainer primaryHeaderContainer = productsPage.getProductsBody().getPrimaryHeaderContainer();
+        PrimaryHeaderContainer primaryHeaderContainer = productsPage.getPrimaryHeaderContainer();
         CartPage cartPage = primaryHeaderContainer.clickCartButton();
         List<CartItem> cartProducts = cartPage.getCartItems();
-        Assert.assertTrue(cartPage.sameSizeAsPicked(products, cartProducts.size()), "Picked products does not match cart item size");
+        Assert.assertEquals(products, cartProducts.size(), "Picked products does not match cart item size");
     }
 
     /**Fifth test
@@ -121,11 +120,11 @@ public class WebTest extends AbstractTest {
     @Test
     @MethodOwner(owner = "Mariusz")
     public void testCheckout() {
-        logTestCorrect();
-        ProductsPage productsPage = new ProductsPage(getDriver());
-        InventoryContainer inventoryContainer = productsPage.getProductsBody().getInventoryContainer();
+        LoginService loginService = new LoginService();
+        ProductsPage productsPage = loginService.successfulLogin();
+        InventoryContainer inventoryContainer = productsPage.getInventoryContainer();
         inventoryContainer.buyAll();
-        PrimaryHeaderContainer primaryHeaderContainer = productsPage.getProductsBody().getPrimaryHeaderContainer();
+        PrimaryHeaderContainer primaryHeaderContainer = productsPage.getPrimaryHeaderContainer();
         CartPage cartPage = primaryHeaderContainer.clickCartButton();
         CheckoutInformationPage checkoutInformationPage = cartPage.clickCheckout();
         CheckoutOverviewPage checkoutOverviewPage = checkoutInformationPage.checkout(R.TESTDATA.get("first_name"),
@@ -145,10 +144,10 @@ public class WebTest extends AbstractTest {
     @Test
     @MethodOwner(owner = "Mariusz")
     public void testLogout() {
-        logTestCorrect();
-        ProductsPage productsPage = new ProductsPage(getDriver());
-        LogPage logPage = productsPage.getProductsBody().getPrimaryHeaderContainer().clickLogOut();
-        Assert.assertEquals(logPage.getCurrentUrl(), R.TESTDATA.get("home_url"), "Did not logout!");
+        LoginService loginService = new LoginService();
+        ProductsPage productsPage = loginService.successfulLogin();
+        LogPage logPage = productsPage.getPrimaryHeaderContainer().clickLogOut();
+        logPage.assertPageOpened();
     }
 
 

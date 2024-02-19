@@ -21,10 +21,6 @@ public class CartPage extends AbstractPage {
         super(driver);
     }
 
-    public boolean sameSizeAsPicked(int products, int cart) {
-        return products == cart;
-    }
-
     public CheckoutInformationPage clickCheckout() {
         checkout.click();
         return new CheckoutInformationPage(getDriver());
